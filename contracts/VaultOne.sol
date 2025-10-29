@@ -1,28 +1,10 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
-
-/**
- * @title VaultOne
- * @dev A secure vault contract for storing and managing Ether deposits
- * @notice Users can deposit, withdraw, and check their balances securely
- */
-contract VaultOne {
-    
-    // Mapping to store user balances
+Mapping to store user balances
     mapping(address => uint256) private balances;
     
-    // Total amount stored in the vault
-    uint256 private totalVaultBalance;
-    
-    // Contract owner
+    Contract owner
     address public owner;
     
-    // Events
-    event Deposit(address indexed user, uint256 amount, uint256 timestamp);
-    event Withdrawal(address indexed user, uint256 amount, uint256 timestamp);
-    event EmergencyWithdrawal(address indexed owner, uint256 amount, uint256 timestamp);
-    
-    // Modifiers
+    Modifiers
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can call this function");
         _;
@@ -118,3 +100,6 @@ contract VaultOne {
         revert("Invalid function call");
     }
 }
+// 
+update
+// 
